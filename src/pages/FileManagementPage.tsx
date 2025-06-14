@@ -6,7 +6,7 @@ import { categories } from "@/data/mockData";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ChevronLeft, Download, Eye } from "lucide-react";
+import { ChevronLeft, Download, Eye, Home } from "lucide-react";
 
 const FileManagementPage = () => {
   const { clientId, categoryId } = useParams<{ clientId: string; categoryId: string }>();
@@ -40,14 +40,25 @@ const FileManagementPage = () => {
       <Header title={`${client.name} - ${category.name}`} />
       
       <div className="dot-container dot-section">
-        <Button 
-          variant="ghost" 
-          className="mb-6 flex items-center text-dot-primary hover:text-dot-accent"
-          onClick={() => navigate(`/client/${clientId}`)}
-        >
-          <ChevronLeft className="mr-2 h-4 w-4" />
-          Back to Categories
-        </Button>
+        <div className="flex gap-4 mb-6">
+          <Button 
+            variant="ghost" 
+            className="flex items-center text-dot-primary hover:text-dot-accent"
+            onClick={() => navigate(`/client/${clientId}`)}
+          >
+            <ChevronLeft className="mr-2 h-4 w-4" />
+            Back to Categories
+          </Button>
+          
+          <Button 
+            variant="ghost" 
+            className="flex items-center text-dot-primary hover:text-dot-accent"
+            onClick={() => navigate('/')}
+          >
+            <Home className="mr-2 h-4 w-4" />
+            Back to Clients
+          </Button>
+        </div>
         
         <div className="mb-6">
           <h2 className="text-xl font-medium text-dot-primary mb-2">Files</h2>
