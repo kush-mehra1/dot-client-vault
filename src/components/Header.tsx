@@ -14,7 +14,14 @@ const Header = ({ title }: HeaderProps) => {
   return (
     <header className="bg-white shadow">
       <div className="dot-container py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-dot-primary">{title}</h1>
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center">
+            <div className="bg-dot-accent text-white rounded-lg px-3 py-2 font-bold text-lg">
+              DOT
+            </div>
+          </div>
+          <h1 className="text-2xl font-bold text-dot-primary">{title}</h1>
+        </div>
         <div className="flex items-center">
           <Button 
             variant="ghost" 
